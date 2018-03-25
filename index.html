@@ -1,1 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>时钟</title>
+<script>
+function toDub(n){
+	if(n<10){
+		return '0'+n;
+		}else{
+			return ''+n;
+			}
+	}
+window.onload=function (){
+	function tick(){
+	var ima=document.getElementsByTagName('img');
+	var oDate=new Date();
+	var str=toDub(oDate.getHours())+toDub(oDate.getMinutes())+toDub(oDate.getSeconds());
+	var dates=oDate.getFullYear()+toDub(oDate.getMonth())+toDub(oDate.getDate());
+	//alert(str);
+	for(var i=8;i<ima.length;i++)
+	{
+		ima[i].src='images/'+str.charAt(i-8)+'.jpg';
+	}
+	for(var j=0;j<8;j++){
+		ima[j].src='images/'+dates.charAt(j)+'.jpg';
+		}
+	};
+	setInterval(tick,1000);
+	tick();
+	};
+	
+</script>
+</head>
 
+<body style="font-size:136px; vertical-align:middle">
+<div>
+<img src="images/0.jpg" />
+<img src="images/0.jpg" />
+<img src="images/0.jpg" />
+<img src="images/0.jpg" />年
+<img src="images/0.jpg" />
+<img src="images/0.jpg" />月
+<img src="images/0.jpg" />
+<img src="images/0.jpg" />日
+</div>
+<div style="height:200px; vertical-align:middle">
+<img src="images/0.jpg" />
+<img src="images/0.jpg" />:
+<img src="images/0.jpg" />
+<img src="images/0.jpg" />:
+<img src="images/0.jpg" />
+<img src="images/0.jpg" />
+</div>
+</body>
+</html>
